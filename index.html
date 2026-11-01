@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Zareen Cutu 🎀</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Georgia,serif;
+text-align:center;
+color:#b83270;
+background:linear-gradient(135deg,#ffe0ec,#fff5fa,#ffcce0);
+}
+
+section{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+
+.card{
+background:#ffffffdf;
+border:2px solid #ffc1d8;
+border-radius:28px;
+padding:30px 22px;
+max-width:460px;
+width:100%;
+box-shadow:0 10px 30px #e98bb455;
+}
+
+h1{color:#d63384;font-size:38px}
+p{font-size:17px;line-height:1.8}
+
+button{
+background:#e85c99;
+color:white;
+border:0;
+padding:14px 25px;
+border-radius:30px;
+font-size:16px;
+margin-top:20px;
+cursor:pointer;
+}
+
+.hidden{display:none}
+
+.cake{
+font-size:85px;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+50%{transform:translateY(-12px)}
+}
+
+.letter{
+background:#fff0f6;
+padding:20px;
+border-radius:18px;
+text-align:left;
+line-height:1.9;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin-top:20px;
+}
+
+.photo{
+height:160px;
+background:#ffe1ed;
+border:2px solid #f3a4c4;
+border-radius:15px;
+overflow:hidden;
+}
+
+.photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.heart{
+position:fixed;
+bottom:-30px;
+animation:float 7s linear forwards;
+pointer-events:none;
+}
+
+@keyframes float{
+to{
+transform:translateY(-110vh) rotate(360deg);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HOME PAGE -->
+
+<section id="home">
+<div class="card">
+<div style="font-size:65px">🎀</div>
+
+<p>A little surprise for someone special...</p>
+
+<h1>Hey Zareen! 💗</h1>
+
+<p>My favourite Cutu, today is all about YOU!</p>
+
+<button onclick="show('birthday')">
+Open Your Surprise 💌
+</button>
+</div>
+</section>
+
+
+<!-- BIRTHDAY PAGE -->
+
+<section id="birthday" class="hidden">
+<div class="card">
+
+<div style="font-size:45px">🌸✨🌸</div>
+
+<h1>Happy Birthday!</h1>
+
+<h2>My Cutu Zareen 🎂</h2>
+
+<div class="cake">🎂</div>
+
+<p>
+May your life always be filled with happiness,
+laughter and endless beautiful memories. 💕
+</p>
+
+<button onclick="show('letter')">
+Read Your Letter 💌
+</button>
+
+</div>
+</section>
+
+
+<!-- LETTER PAGE -->
+
+<section id="letter" class="hidden">
+<div class="card">
+
+<h1>Dear Cutu 💗</h1>
+
+<div class="letter">
+
+Happy Birthday, Zareen! 🥹🎀
+
+<br><br>
+
+I just want you to know how special you are.
+I'm genuinely lucky to have a best friend like you.
+
+<br><br>
+
+Thank you for all the laughs, silly conversations,
+random moments and beautiful memories.
+
+<br><br>
+
+I hope this new chapter brings you everything
+your heart wishes for.
+
+<br><br>
+
+Never stop smiling, never stop being your
+adorable self, and never forget how amazing you are.
+
+<br><br>
+
+No matter how busy life gets,
+I hope we always keep making crazy memories together.
+
+<br><br>
+
+You deserve all the happiness in the world.
+
+<br><br>
+
+<b>Happy Birthday once again, CUTU! 🫶🏻❤️</b>
+
+</div>
+
+<button onclick="show('gallery')">
+Zareen Cutu 
+</button>
+
+</div>
+</section>
+
+
+<!-- PHOTO GALLERY -->
+
+<section id="gallery" class="hidden">
+<div class="card">
+
+<h1> Zareen Cutu </h1>
+
+<p>Some beautiful Photos 💗</p>
+
+<div class="gallery">
+
+<div class="photo">
+<img src="zareen1.jpg" alt="Memory 1">
+</div>
+
+<div class="photo">
+<img src="zareen2.jpg" alt="Memory 2">
+</div>
+
+<div class="photo">
+<img src="zareen3.jpg" alt="Memory 3">
+</div>
+
+<div class="photo">
+<img src="zareen4.jpg" alt="Memory 4">
+</div>
+
+</div>
+
+<button onclick="show('final')">
+One Last Surprise 🎁
+</button>
+
+</div>
+</section>
+
+
+<!-- FINAL PAGE -->
+
+<section id="final" class="hidden">
+<div class="card">
+
+<div style="font-size:75px">🎁</div>
+
+<h1>Stay Happy, Cutu!</h1>
+
+<p>
+You're loved, appreciated and one of a kind. 💗
+</p>
+
+<h2>Happy Birthday Zareen! 🎂</h2>
+
+<p>
+Lots of smiles, happiness and friendship! 🎀
+</p>
+
+<button onclick="celebrate()">
+Celebrate Again! 🎉
+</button>
+
+</div>
+</section>
+
+
+<script>
+
+function show(id){
+
+document.querySelectorAll('section')
+.forEach(s=>s.classList.add('hidden'));
+
+document.getElementById(id)
+.classList.remove('hidden');
+
+window.scrollTo(0,0);
+
+}
+
+function celebrate(){
+
+for(let i=0;i<35;i++){
+
+let h=document.createElement('div');
+
+h.className='heart';
+
+h.innerHTML=['💗','💕','🎀','✨','🌸']
+[Math.floor(Math.random()*5)];
+
+h.style.left=Math.random()*100+'vw';
+
+h.style.fontSize='25px';
+
+h.style.animationDuration=(3+Math.random()*4)+'s';
+
+document.body.appendChild(h);
+
+setTimeout(()=>h.remove(),7000);
+
+}
+
+}
+
+setInterval(()=>{
+
+let h=document.createElement('div');
+
+h.className='heart';
+h.innerHTML='💗';
+h.style.left=Math.random()*100+'vw';
+h.style.fontSize='22px';
+
+document.body.appendChild(h);
+
+setTimeout(()=>h.remove(),7000);
+
+},700);
+
+</script>
+
+</body>
+</html>
